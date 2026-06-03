@@ -622,15 +622,15 @@ function checkReligioniQuiz(btn, isCorrect) {
     if (fb) {
         fb.closest('.card').querySelectorAll('.quiz-btn').forEach(b => {
             b.disabled = true;
-            if (b.textContent.trim() === 'La porta tra il mondo profano e quello sacro') b.classList.add('correct');
+            if (b.textContent.trim() === 'Kami') b.classList.add('correct');
         });
     }
     if (!isCorrect) btn.classList.add('wrong');
 
     if (isCorrect) {
-        fb.innerHTML = '✅ <strong style="color:#80ffaa">Corretto!</strong> Il Torii separa simbolicamente lo spazio quotidiano da quello sacro. Attraversarlo è come entrare nel regno dei kami. Anche il suo colore rosso ha un significato: allontana gli spiriti maligni.';
+        fb.innerHTML = '✅ <strong style="color:#80ffaa">Corretto!</strong> I kami sono gli spiriti della natura nello Scintoismo. Possono essere nelle montagne, nei fiumi, negli alberi, nel vento. I giapponesi li venerano da migliaia di anni.';
     } else {
-        fb.innerHTML = '❌ <strong style="color:#ffaaaa">Sbagliato.</strong> La risposta è <strong>la porta tra il mondo profano e quello sacro</strong>. Il Torii è il simbolo del confine tra la dimensione umana e quella divina.';
+        fb.innerHTML = '❌ <strong style="color:#ffaaaa">Sbagliato.</strong> La risposta giusta è <strong>Kami</strong>. Sono gli spiriti della natura che lo Scintoismo venera in ogni cosa che esiste.';
     }
 }
 
@@ -748,7 +748,7 @@ const QUESTIONS = [
         q: '⛩️ Quale delle seguenti è una caratteristica dello Scintoismo?',
         opts: ['Crede nel karma e nella reincarnazione', 'Adora i "kami" (spiriti della natura)', 'Ha come fondatore il Buddha', 'Pratica la meditazione zen per il nirvana'],
         correct: 1,
-        exp: 'Lo Scintoismo adora i "kami", spiriti o forze divine presenti in tutto ciò che esiste: montagne, fiumi, alberi, vento. È la religione originaria del Giappone, senza un fondatore né un testo sacro unico.'
+        exp: 'Lo Scintoismo adora i "kami", cioè gli spiriti della natura presenti nelle montagne, nei fiumi, negli alberi e nel vento. È la religione originaria del Giappone.'
     }
 ];
 
