@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Giappone – Tesina di Edoardo Filizola</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+    <div class="nav-logo">🗾 Giappone</div>
+    <ul class="nav-links">
+        <li><a href="#" class="nav-link active" onclick="navigateTo('home');return false;">Home</a></li>
+        <li><a href="#" class="nav-link" onclick="navigateTo('natura');return false;">🌊 Natura</a></li>
+        <li><a href="#" class="nav-link" onclick="navigateTo('arte');return false;">🎨 Arte</a></li>
+        <li><a href="#" class="nav-link" onclick="navigateTo('guerra');return false;">💣 Guerra</a></li>
+        <li><a href="#" class="nav-link" onclick="navigateTo('disciplina');return false;">🥋 Disciplina</a></li>
+        <li><a href="#" class="nav-link" onclick="navigateTo('religioni');return false;">⛩️ Religioni</a></li>
+        <li><a href="#" class="nav-link" onclick="navigateTo('quiz');return false;">📝 Quiz</a></li>
+    </ul>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+</nav>
+
+<!-- ===== HOME ===== -->
+<section id="home" class="section active">
+    <div class="hero">
+        <div class="hero-content">
+            <span class="japanese-ornament">⛩</span>
+            <h1 class="hero-title">La Forza</h1>
+            <p class="hero-subtitle">Natura, Arte, Guerra e Disciplina</p>
+            <p class="hero-tagline">Un viaggio nel Giappone</p>
+            <p class="hero-desc">Esplora il Giappone attraverso cinque percorsi: la potenza della natura, la bellezza dell'arte, la storia della guerra, la disciplina delle arti marziali e la spiritualità delle religioni.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-natura"     onclick="navigateTo('natura')">🌊 Esplora la Natura</button>
+                <button class="btn btn-arte"       onclick="navigateTo('arte')">🎨 Esplora l'Arte</button>
+                <button class="btn btn-guerra"     onclick="navigateTo('guerra')">💣 Esplora la Guerra</button>
+                <button class="btn btn-disciplina" onclick="navigateTo('disciplina')">🥋 Esplora la Disciplina</button>
+                <button class="btn btn-religioni"  onclick="navigateTo('religioni')">⛩️ Esplora le Religioni</button>
+            </div>
+            <button class="btn btn-secondary" onclick="navigateTo('quiz')" style="margin-top:1rem;max-width:320px">📝 Vai al Quiz Finale</button>
+        </div>
+        <div class="hero-visual">
+            <svg viewBox="0 0 400 300" class="fuji-svg">
+                <defs>
+                    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%"   stop-color="#04070e"/>
+                        <stop offset="55%"  stop-color="#0c1a38"/>
+                        <stop offset="100%" stop-color="#162a50"/>
+                    </linearGradient>
+                    <linearGradient id="mountainGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%"   stop-color="#dde3e8"/>
+                        <stop offset="40%"  stop-color="#b8c0c8"/>
+                        <stop offset="100%" stop-color="#8a9298"/>
+                    </linearGradient>
+                    <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%"   stop-color="#0d2a55"/>
+                        <stop offset="100%" stop-color="#07162e"/>
+                    </linearGradient>
+                    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%"   stop-color="rgba(245,230,120,0.18)"/>
+                        <stop offset="100%" stop-color="rgba(245,230,120,0)"/>
+                    </radialGradient>
+                    <radialGradient id="redGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%"   stop-color="rgba(204,34,34,0.12)"/>
+                        <stop offset="100%" stop-color="rgba(204,34,34,0)"/>
+                    </radialGradient>
+                </defs>
+                <!-- Sky -->
+                <rect width="400" height="300" fill="url(#skyGrad)"/>
+                <!-- Soft red glow (rising sun hint) -->
+                <circle cx="200" cy="300" r="180" fill="url(#redGlow)"/>
+                <!-- Moon glow -->
+                <circle cx="338" cy="52" r="55" fill="url(#moonGlow)"/>
+                <!-- Moon crescent -->
+                <circle cx="338" cy="52" r="26" fill="#f5e678" opacity="0.92"/>
+                <circle cx="325" cy="47" r="25" fill="#0c1a38"/>
+                <!-- Stars -->
+                <circle cx="42"  cy="25" r="1.5" fill="white" opacity="0.85"/>
+                <circle cx="108" cy="16" r="1"   fill="white" opacity="0.65"/>
+                <circle cx="178" cy="12" r="1.6" fill="white" opacity="0.9"/>
+                <circle cx="280" cy="22" r="1"   fill="white" opacity="0.7"/>
+                <circle cx="72"  cy="50" r="0.9" fill="white" opacity="0.5"/>
+                <circle cx="148" cy="36" r="1"   fill="white" opacity="0.65"/>
+                <circle cx="252" cy="40" r="1.2" fill="white" opacity="0.6"/>
+                <circle cx="30"  cy="65" r="0.8" fill="white" opacity="0.45"/>
+                <circle cx="168" cy="52" r="0.9" fill="white" opacity="0.4"/>
+                <circle cx="310" cy="35" r="0.8" fill="white" opacity="0.55"/>
+                <!-- Mountain body -->
+                <polygon points="200,66 352,216 48,216" fill="url(#mountainGrad)"/>
+                <!-- Snow cap -->
+                <polygon points="200,66 252,132 148,132" fill="white" opacity="0.97"/>
+                <!-- Snow highlights -->
+                <polygon points="200,66 220,100 180,100" fill="white"/>
+                <!-- Forest belt -->
+                <rect x="0" y="207" width="400" height="11" fill="#1b3822"/>
+                <!-- Water -->
+                <rect x="0" y="216" width="400" height="84" fill="url(#waterGrad)"/>
+                <!-- Water reflections -->
+                <path d="M0,230 Q100,220 200,230 Q300,240 400,230" stroke="rgba(255,255,255,0.28)" stroke-width="1.5" fill="none"/>
+                <path d="M0,246 Q100,238 200,246 Q300,254 400,246" stroke="rgba(255,255,255,0.14)" stroke-width="1"   fill="none"/>
+                <path d="M0,262 Q100,256 200,262 Q300,268 400,262" stroke="rgba(255,255,255,0.08)" stroke-width="1"   fill="none"/>
+                <!-- Mountain reflection (faint) -->
+                <polygon points="200,216 310,270 90,270" fill="rgba(180,190,200,0.07)"/>
+                <!-- Torii gate -->
+                <rect x="183" y="166" width="6" height="34" fill="#cc0000"/>
+                <rect x="211" y="166" width="6" height="34" fill="#cc0000"/>
+                <rect x="175" y="163" width="50" height="8"  fill="#cc0000"/>
+                <rect x="180" y="172" width="40" height="5"  fill="#cc0000" opacity="0.8"/>
+                <!-- Cherry blossom tree left -->
+                <line x1="66" y1="218" x2="66" y2="192" stroke="#5a342a" stroke-width="3"/>
+                <line x1="66" y1="205" x2="52" y2="196" stroke="#5a342a" stroke-width="2"/>
+                <circle cx="64"  cy="187" r="11"  fill="rgba(255,160,185,0.55)"/>
+                <circle cx="72"  cy="184" r="9"   fill="rgba(255,140,170,0.48)"/>
+                <circle cx="58"  cy="182" r="8"   fill="rgba(255,175,200,0.42)"/>
+                <circle cx="68"  cy="178" r="7"   fill="rgba(255,190,210,0.38)"/>
+                <!-- Cherry blossom tree right -->
+                <line x1="334" y1="218" x2="334" y2="192" stroke="#5a342a" stroke-width="3"/>
+                <line x1="334" y1="205" x2="348" y2="196" stroke="#5a342a" stroke-width="2"/>
+                <circle cx="336" cy="187" r="11"  fill="rgba(255,160,185,0.55)"/>
+                <circle cx="328" cy="184" r="9"   fill="rgba(255,140,170,0.48)"/>
+                <circle cx="342" cy="182" r="8"   fill="rgba(255,175,200,0.42)"/>
+                <circle cx="332" cy="178" r="7"   fill="rgba(255,190,210,0.38)"/>
+                <!-- Falling petals -->
+                <circle cx="96"  cy="160" r="2.5" fill="rgba(255,180,200,0.5)"/>
+                <circle cx="130" cy="145" r="2"   fill="rgba(255,170,195,0.45)"/>
+                <circle cx="305" cy="155" r="2.5" fill="rgba(255,180,200,0.5)"/>
+                <circle cx="272" cy="140" r="2"   fill="rgba(255,170,195,0.45)"/>
+            </svg>
+            <img id="fuji-svg" src="" alt="Monte Fuji" style="display:none;width:100%;height:auto;max-width:400px;border-radius:10px">
+        </div>
+    </div>
+    <div class="scroll-hint">Scegli un percorso per iniziare ↑</div>
+</section>
+
+<!-- ===== NATURA ===== -->
+<section id="natura" class="section">
+    <div class="section-header">
+        <h2>🌊 Natura</h2>
+        <p>La forza della terra giapponese</p>
+    </div>
+
+    <div class="content-grid">
+        <div class="card">
+            <h3>📍 Il Giappone nel Mondo</h3>
+            <div class="info-list">
+                <div class="info-item">🗾 <span><strong>Arcipelago</strong> di 6.852 isole nell'Oceano Pacifico</span></div>
+                <div class="info-item">🏝️ <span><strong>4 isole principali:</strong> Honshu, Hokkaido, Kyushu, Shikoku</span></div>
+                <div class="info-item">🌏 <span><strong>Posizione:</strong> Asia orientale, a est di Cina e Corea</span></div>
+                <div class="info-item">🏔️ <span><strong>Monte Fuji:</strong> 3.776 m – il monte più alto</span></div>
+                <div class="info-item">👥 <span><strong>Popolazione:</strong> circa 125 milioni di abitanti</span></div>
+                <div class="info-item">🌡️ <span><strong>Clima:</strong> varia dal freddo al nord al subtropicale al sud</span></div>
+            </div>
+        </div>
+
+        <div class="card card-interactive">
+            <h3>⚠️ Simulatore di Terremoto</h3>
+            <p class="card-desc">Muovi il cursore per simulare un terremoto sulla scala Richter!</p>
+            <div class="earthquake-sim">
+                <input type="range" min="1" max="9" value="1" class="earthquake-slider" id="earthquakeSlider" oninput="updateEarthquake()">
+                <div class="slider-labels"><span>1</span><span>3</span><span>5</span><span>7</span><span>9</span></div>
+                <div class="magnitude-display">
+                    <div class="magnitude-value" id="magnitudeValue">1.0</div>
+                    <div class="magnitude-label">Magnitudo Richter</div>
+                </div>
+                <div class="earthquake-result" id="earthquakeResult">
+                    <div class="quake-icon" id="quakeIcon">😌</div>
+                    <div class="quake-text" id="quakeText">Scossa appena percettibile</div>
+                    <div class="quake-detail" id="quakeDetail">Le persone non avvertono nulla</div>
+                </div>
+                <div class="earthquake-visual" id="earthquakeVisual">
+                    <span class="building" id="b1">🏠</span>
+                    <span class="building" id="b2">🏢</span>
+                    <span class="building" id="b3">🏯</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-grid">
+        <div class="card">
+            <h3>🌏 Placche Tettoniche</h3>
+            <p style="color:var(--text-secondary);margin-bottom:1rem">Il Giappone si trova sull'<strong>Anello di Fuoco del Pacifico</strong>, dove si incontrano 4 grandi placche tettoniche. Il loro scontro causa circa <strong>1.500 terremoti l'anno!</strong></p>
+            <div class="plates-grid">
+                <div class="plate-item">🔴 <span>Placca del Pacifico</span></div>
+                <div class="plate-item">🟠 <span>Placca Filippina</span></div>
+                <div class="plate-item">🟡 <span>Placca Eurasiatica</span></div>
+                <div class="plate-item">🟢 <span>Placca Nord-Americana</span></div>
+            </div>
+            <p style="color:var(--text-secondary);margin-top:1rem;font-size:0.9rem">Quando due placche si scontrano, una scende sotto l'altra (subduzione): questa energia rilasciata causa terremoti e vulcani.</p>
+        </div>
+
+        <div class="card card-interactive">
+            <h3>🌊 Come si forma uno Tsunami?</h3>
+            <div class="tsunami-steps">
+                <div class="tsunami-step" id="ts1" onclick="showTsunamiStep(1)">
+                    <div class="step-num">1</div><div class="step-text">Terremoto sottomarino</div>
+                </div>
+                <div class="tsunami-step" id="ts2" onclick="showTsunamiStep(2)">
+                    <div class="step-num">2</div><div class="step-text">Spostamento del fondale</div>
+                </div>
+                <div class="tsunami-step" id="ts3" onclick="showTsunamiStep(3)">
+                    <div class="step-num">3</div><div class="step-text">Onda in mare aperto</div>
+                </div>
+                <div class="tsunami-step" id="ts4" onclick="showTsunamiStep(4)">
+                    <div class="step-num">4</div><div class="step-text">Impatto sulla costa</div>
+                </div>
+            </div>
+            <div class="info-panel" id="tsunamiDesc">👆 Clicca su un passo per scoprire come si forma uno tsunami!</div>
+        </div>
+    </div>
+
+    <div class="card card-map">
+        <h3>🗾 Mappa del Giappone – Clicca per scoprire!</h3>
+        <div class="japan-map-container">
+            <div class="image-container" style="position: relative;">
+                <img id="japan-svg" src="" alt="Mappa del Giappone" style="display:none;width:100%;height:auto;max-width:320px;border-radius:10px">
+                <!-- Marker interattivi per la cartina -->
+                <div class="interactive-overlay" id="japan-overlay" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;border-radius:10px;">
+                    <div id="mjp-hokkaido"  class="map-marker-custom" style="left:74.07%;top:16.32%;" onclick="showMapInfo('hokkaido')"><div class="marker-dot"></div><div class="marker-label">Hokkaido</div></div>
+                    <div id="mjp-honshu"    class="map-marker-custom" style="left:59.79%;top:59.08%;" onclick="showMapInfo('honshu')"><div class="marker-dot"></div><div class="marker-label">Honshu</div></div>
+                    <div id="mjp-shikoku"   class="map-marker-custom" style="left:42%;top:72%;"       onclick="showMapInfo('shikoku')"><div class="marker-dot"></div><div class="marker-label">Shikoku</div></div>
+                    <div id="mjp-kyushu"    class="map-marker-custom" style="left:35%;top:78%;"       onclick="showMapInfo('kyushu')"><div class="marker-dot"></div><div class="marker-label">Kyushu</div></div>
+                    <div id="mjp-tokyo"     class="map-marker-custom" style="left:65%;top:42%;"       onclick="showMapInfo('tokyo')"><div class="marker-dot"></div><div class="marker-label">Tokyo</div></div>
+                    <div id="mjp-fuji"      class="map-marker-custom" style="left:58%;top:52%;"       onclick="showMapInfo('fuji')"><div class="marker-dot"></div><div class="marker-label">Monte Fuji</div></div>
+                    <div id="mjp-hiroshima" class="map-marker-custom" style="left:45%;top:58%;"       onclick="showMapInfo('hiroshima')"><div class="marker-dot"></div><div class="marker-label">Hiroshima</div></div>
+                </div>
+            </div>
+            <div class="map-info-panel" id="mapInfoPanel">
+                👆 Clicca su un'isola o un punto sulla mappa per scoprire informazioni!
+            </div>
+        </div>
+        <button class="btn-calibrate" onclick="startCalibration('japan')">⚙️ Calibra posizione marker</button>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="btn btn-prev" onclick="navigateTo('home')">← Home</button>
+        <button class="btn btn-next" onclick="navigateTo('arte')">Arte 🎨 →</button>
+    </div>
+
+</section>
+
+<!-- ===== ARTE ===== -->
+<section id="arte" class="section">
+    <div class="section-header">
+        <h2>🎨 Arte – Hokusai</h2>
+        <p>La Grande Onda di Kanagawa</p>
+    </div>
+
+    <div class="content-grid">
+        <div class="card">
+            <h3>👨‍🎨 Chi era Hokusai?</h3>
+            <div class="info-list">
+                <div class="info-item">🎂 <span><strong>Nato:</strong> 1760, Edo (oggi Tokyo)</span></div>
+                <div class="info-item">✏️ <span><strong>Stile:</strong> Ukiyo-e (stampe su legno)</span></div>
+                <div class="info-item">🎨 <span><strong>Opere:</strong> oltre 30.000 lavori</span></div>
+                <div class="info-item">⭐ <span><strong>Famoso per:</strong> la serie "36 vedute del Monte Fuji"</span></div>
+                <div class="info-item">📅 <span><strong>Morto:</strong> 1849, a 89 anni</span></div>
+                <div class="info-item">🌊 <span><strong>Opera più famosa:</strong> La Grande Onda (1831)</span></div>
+            </div>
+            <blockquote class="quote">"Da 73 anni ho capito vagamente la struttura della vera natura."<br><span class="quote-author">— Hokusai</span></blockquote>
+        </div>
+
+        <div class="card card-interactive">
+            <h3>🌊 La Grande Onda – Clicca per scoprire!</h3>
+            <div class="wave-container">
+                <div class="image-container" style="position: relative;">
+                    <img id="wave-svg" src="" alt="La Grande Onda di Hokusai" style="display:none;width:100%;height:auto;max-width:400px;border-radius:10px">
+                    <!-- Marker interattivi per l'onda -->
+                    <div class="interactive-overlay" id="wave-overlay" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;border-radius:10px;">
+                        <div id="mwv-onda"   class="wave-marker-custom" style="left:40%;top:55%;"       onclick="showWaveInfo('onda')"><div class="marker-dot"></div><div class="marker-label">L'Onda</div></div>
+                        <div id="mwv-barche" class="wave-marker-custom" style="left:25%;top:75%;"       onclick="showWaveInfo('barche')"><div class="marker-dot"></div><div class="marker-label">Le Barche</div></div>
+                        <div id="mwv-fuji"   class="wave-marker-custom" style="left:64.80%;top:68.63%;" onclick="showWaveInfo('fuji')"><div class="marker-dot"></div><div class="marker-label">Monte Fuji</div></div>
+                    </div>
+                </div>
+                <div class="info-panel" id="waveInfoPanel">👆 Clicca sull'onda, sulle barche o sul Monte Fuji per scoprire i segreti dell'opera!</div>
+            </div>
+            <button class="btn-calibrate" onclick="startCalibration('wave')">⚙️ Calibra posizione marker</button>
+        </div>
+    </div>
+
+    <div class="card" style="margin-bottom:1.5rem">
+        <h3>🎯 Mini Quiz – Arte</h3>
+        <p class="quiz-question">In quale anno fu creata "La Grande Onda di Kanagawa"?</p>
+        <div class="quiz-options">
+            <button class="quiz-btn" onclick="checkArteQuiz(this, false)">1750</button>
+            <button class="quiz-btn" onclick="checkArteQuiz(this, true)">1831</button>
+            <button class="quiz-btn" onclick="checkArteQuiz(this, false)">1900</button>
+            <button class="quiz-btn" onclick="checkArteQuiz(this, false)">1975</button>
+        </div>
+        <div class="info-panel" id="arteQuizFeedback" style="min-height:50px;margin-top:0.8rem"></div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="btn btn-prev" onclick="navigateTo('natura')">← Natura</button>
+        <button class="btn btn-next" onclick="navigateTo('guerra')">Guerra 💣 →</button>
+    </div>
+</section>
+
+<!-- ===== GUERRA ===== -->
+<section id="guerra" class="section">
+    <div class="section-header">
+        <h2>💣 Guerra</h2>
+        <p>Il Giappone nella Seconda Guerra Mondiale</p>
+    </div>
+
+    <div class="card card-warning">
+        ⚠️ Questa sezione tratta eventi storici drammatici. È importante conoscerli per non ripetere gli errori del passato.
+    </div>
+
+    <img id="war-svg" src="" alt="Seconda Guerra Mondiale" style="display:none;width:100%;height:auto;max-width:600px;border-radius:10px;margin:1rem 0">
+
+    <div class="card">
+        <h3>📅 Timeline – Clicca sulle date per saperne di più</h3>
+        <div class="timeline">
+
+            <div class="timeline-item" id="ti1939" onclick="toggleTimeline('1939')">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">1939</div>
+                <div class="timeline-title">Scoppio della Seconda Guerra Mondiale</div>
+                <div class="timeline-chevron" id="ch1939">▼</div>
+            </div>
+            <div class="timeline-content" id="tc1939">
+                <div class="event-card">
+                    <h4>🌍 L'Europa in Guerra</h4>
+                    <ul>
+                        <li>Il 1° settembre 1939 la Germania di Hitler invade la Polonia</li>
+                        <li>Francia e Gran Bretagna dichiarano guerra alla Germania</li>
+                        <li>Il Giappone è già impegnato in guerra con la Cina dal 1937</li>
+                        <li>Osserva gli eventi europei aspettando il momento giusto</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item" id="ti1940" onclick="toggleTimeline('1940')">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">1940</div>
+                <div class="timeline-title">Il Patto Tripartito: l'Asse Roma-Berlino-Tokyo</div>
+                <div class="timeline-chevron" id="ch1940">▼</div>
+            </div>
+            <div class="timeline-content" id="tc1940">
+                <div class="event-card">
+                    <h4>🤝 L'Alleanza</h4>
+                    <ul>
+                        <li>Il Giappone firma il Patto Tripartito con Germania e Italia</li>
+                        <li>Nasce l'Asse Roma-Berlino-Tokyo</li>
+                        <li>Il Giappone vuole dominare l'Asia e il Pacifico</li>
+                        <li>Gli USA tagliano le forniture di petrolio al Giappone in risposta</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item" id="ti1941" onclick="toggleTimeline('1941')">
+                <div class="timeline-dot" style="background:#ff4444;box-shadow:0 0 10px #ff4444"></div>
+                <div class="timeline-date">7 Dic 1941</div>
+                <div class="timeline-title">Attacco a Pearl Harbor</div>
+                <div class="timeline-chevron" id="ch1941">▼</div>
+            </div>
+            <div class="timeline-content" id="tc1941">
+                <div class="event-card" style="border-left-color:#ff4444">
+                    <h4>💥 L'Attacco Sorpresa</h4>
+                    <ul>
+                        <li>353 aerei giapponesi attaccano la base navale americana alle Hawaii</li>
+                        <li>2.403 americani morti, 1.178 feriti</li>
+                        <li>18 navi da guerra affondate o danneggiate</li>
+                        <li>Gli USA entrano ufficialmente in guerra</li>
+                        <li>Roosevelt definì l'8 dicembre "una data che vivrà nell'infamia"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item" id="ti1944" onclick="toggleTimeline('1944')">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">1944</div>
+                <div class="timeline-title">I Kamikaze – Piloti Suicidi</div>
+                <div class="timeline-chevron" id="ch1944">▼</div>
+            </div>
+            <div class="timeline-content" id="tc1944">
+                <div class="event-card">
+                    <h4>✈️ Il Vento Divino</h4>
+                    <ul>
+                        <li>"Kamikaze" significa <strong>vento divino</strong> in giapponese</li>
+                        <li>Con la guerra volgente al peggio, il Giappone usò piloti suicidi</li>
+                        <li>Si schiantavano con gli aerei sulle navi nemiche</li>
+                        <li>Era considerato un atto d'onore per la patria e l'imperatore</li>
+                        <li>Circa 3.800 piloti kamikaze morirono in missione</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item" id="ti1945" onclick="toggleTimeline('1945')">
+                <div class="timeline-dot" style="background:#ff4444;box-shadow:0 0 10px #ff4444"></div>
+                <div class="timeline-date">6–9 Ago 1945</div>
+                <div class="timeline-title">Hiroshima e Nagasaki – Le Bombe Atomiche</div>
+                <div class="timeline-chevron" id="ch1945">▼</div>
+            </div>
+            <div class="timeline-content" id="tc1945">
+                <div class="event-card" style="border-left-color:#ff4444">
+                    <h4>☢️ La Tragedia</h4>
+                    <ul>
+                        <li><strong>6 agosto:</strong> Prima bomba atomica su Hiroshima – circa 80.000 morti immediati</li>
+                        <li><strong>9 agosto:</strong> Seconda bomba su Nagasaki – circa 40.000 morti immediati</li>
+                        <li>Migliaia morirono nei mesi successivi per le radiazioni</li>
+                        <li>Sono le uniche armi atomiche mai usate in guerra nella storia</li>
+                        <li><strong>15 agosto:</strong> L'imperatore Hirohito annuncia la resa del Giappone</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item" id="ti1945b" onclick="toggleTimeline('1945b')">
+                <div class="timeline-dot" style="background:#2d9a4f;box-shadow:0 0 10px #2d9a4f"></div>
+                <div class="timeline-date">2 Set 1945</div>
+                <div class="timeline-title">Fine della Guerra – La Pace</div>
+                <div class="timeline-chevron" id="ch1945b">▼</div>
+            </div>
+            <div class="timeline-content" id="tc1945b">
+                <div class="event-card" style="border-left-color:#2d9a4f">
+                    <h4>🕊️ Il Dopoguerra</h4>
+                    <ul>
+                        <li>Il Giappone firma la resa formale sulla corazzata USS Missouri</li>
+                        <li>Fine ufficiale della Seconda Guerra Mondiale</li>
+                        <li>Il Giappone si ricostruisce sotto supervisione americana</li>
+                        <li>Oggi è una democrazia pacifica e leader tecnologico mondiale</li>
+                        <li>La pace è il lascito più importante di quelle tragedie</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="btn btn-prev" onclick="navigateTo('arte')">← Arte</button>
+        <button class="btn btn-next" onclick="navigateTo('disciplina')">Disciplina 🥋 →</button>
+    </div>
+</section>
+
+<!-- ===== DISCIPLINA ===== -->
+<section id="disciplina" class="section">
+    <div class="section-header">
+        <h2>🥋 Disciplina</h2>
+        <p>Le Arti Marziali Giapponesi</p>
+    </div>
+
+    <img id="discipline-svg" src="" alt="Arti Marziali Giapponesi" style="display:none;width:100%;height:auto;max-width:600px;border-radius:10px;margin:1rem 0">
+
+    <div class="content-grid">
+        <div class="card">
+            <h3>🥋 Le Arti Marziali – Clicca per saperne di più!</h3>
+            <div class="martial-arts-grid">
+                <div class="martial-art" id="ma-judo" onclick="showMartialArt('judo', this)">
+                    <div class="ma-icon">🥋</div>
+                    <div class="ma-name">Judo</div>
+                    <div class="ma-hint">clicca!</div>
+                </div>
+                <div class="martial-art" id="ma-karate" onclick="showMartialArt('karate', this)">
+                    <div class="ma-icon">✊</div>
+                    <div class="ma-name">Karate</div>
+                    <div class="ma-hint">clicca!</div>
+                </div>
+                <div class="martial-art" id="ma-aikido" onclick="showMartialArt('aikido', this)">
+                    <div class="ma-icon">☯️</div>
+                    <div class="ma-name">Aikido</div>
+                    <div class="ma-hint">clicca!</div>
+                </div>
+                <div class="martial-art" id="ma-kendo" onclick="showMartialArt('kendo', this)">
+                    <div class="ma-icon">⚔️</div>
+                    <div class="ma-name">Kendo</div>
+                    <div class="ma-hint">clicca!</div>
+                </div>
+            </div>
+            <div class="info-panel" id="martialArtInfo">Clicca su un'arte marziale per saperne di più!</div>
+        </div>
+
+        <div class="card">
+            <h3>🎌 I Valori del Budo</h3>
+            <p style="color:var(--text-secondary);margin-bottom:1rem">Le arti marziali giapponesi insegnano più che semplici tecniche di combattimento:</p>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">🙏</div>
+                    <div class="value-name">Rispetto</div>
+                    <div class="value-desc">Per l'avversario, il maestro e se stessi</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🧘</div>
+                    <div class="value-name">Disciplina</div>
+                    <div class="value-desc">Controllo del corpo e della mente</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💪</div>
+                    <div class="value-name">Perseveranza</div>
+                    <div class="value-desc">Non arrendersi mai</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">☮️</div>
+                    <div class="value-name">Pace</div>
+                    <div class="value-desc">La vera forza evita il conflitto</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-bottom:1.5rem">
+        <h3>🎮 Gioco Decisionale – Sei un vero Maestro?</h3>
+        <div class="scenario-box">
+            <div class="scenario-icon">🥋</div>
+            <p class="scenario-text">Sei sul tatami. Un avversario ti si avvicina in modo aggressivo.<br><strong>Cosa fai?</strong></p>
+        </div>
+        <div class="decision-options" id="decisionOptions">
+            <button class="decision-btn d-wrong" onclick="makeDecision(this,'wrong1')">⚡ Attacco subito senza pensare</button>
+            <button class="decision-btn d-correct" onclick="makeDecision(this,'correct')">🧘 Mantengo la calma e aspetto</button>
+            <button class="decision-btn d-wrong" onclick="makeDecision(this,'wrong2')">😤 Reagisco impulsivamente con rabbia</button>
+        </div>
+        <div class="info-panel" id="decisionResult" style="display:none;margin-top:1rem"></div>
+        <button class="btn btn-secondary" id="resetGameBtn" onclick="resetDecisionGame()" style="display:none;margin-top:1rem">🔄 Riprova</button>
+    </div>
+
+    <div id="badgeSection" style="display:none;text-align:center;padding:2rem 0">
+        <div class="badge">
+            <div class="badge-icon">🏆</div>
+            <div class="badge-title">Maestro dell'Equilibrio</div>
+            <div class="badge-subtitle">Hai dimostrato saggezza e controllo</div>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="btn btn-prev" onclick="navigateTo('guerra')">← Guerra</button>
+        <button class="btn btn-next" onclick="navigateTo('religioni')">Religioni ⛩️ →</button>
+    </div>
+</section>
+
+<!-- ===== RELIGIONI ===== -->
+<section id="religioni" class="section">
+    <div class="section-header">
+        <h2>⛩️ Religioni</h2>
+        <p>Scintoismo e Buddismo – l'anima spirituale del Giappone</p>
+    </div>
+
+    <div class="card" style="margin-bottom:1.4rem">
+        <h3>🌸 Chi pratica cosa?</h3>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:1.2rem">In Giappone convivono pacificamente <strong style="color:var(--text-1)">Scintoismo</strong> e <strong style="color:var(--text-1)">Buddismo</strong>. La cosa più sorprendente? La maggioranza le pratica <em>entrambe</em> contemporaneamente!</p>
+
+        <!-- Venn cells -->
+        <div class="venn-cells" id="vennCells">
+            <div class="venn-cell vc-shinto">
+                <div class="vc-icon">⛩️</div>
+                <div class="vc-pct" id="vp-shinto">0%</div>
+                <div class="vc-name">Solo<br>Scintoismo</div>
+            </div>
+            <div class="venn-cell vc-both">
+                <div class="vc-icon">⛩️+☸️</div>
+                <div class="vc-pct vc-pct-big" id="vp-both">0%</div>
+                <div class="vc-name">Praticano<br><strong>entrambe</strong></div>
+            </div>
+            <div class="venn-cell vc-buddismo">
+                <div class="vc-icon">☸️</div>
+                <div class="vc-pct" id="vp-buddismo">0%</div>
+                <div class="vc-name">Solo<br>Buddismo</div>
+            </div>
+        </div>
+
+        <!-- 100% segmented bar -->
+        <div class="venn-bar" id="vennBar">
+            <div class="vb-seg vb-shinto"   id="vbs-shinto"  ></div>
+            <div class="vb-seg vb-both"     id="vbs-both"    ></div>
+            <div class="vb-seg vb-buddismo" id="vbs-buddismo"></div>
+            <div class="vb-seg vb-neither"  id="vbs-neither" ></div>
+        </div>
+        <div class="venn-bar-legend">
+            <span class="vbl vbl-shinto">⛩️ 12% solo Shinto</span>
+            <span class="vbl vbl-both">✨ 57% entrambe</span>
+            <span class="vbl vbl-buddismo">☸️ 9% solo Buddismo</span>
+            <span class="vbl vbl-neither">🚫 22% nessuna</span>
+        </div>
+    </div>
+
+    <div class="card card-interactive" style="margin-bottom:1.4rem">
+        <h3>🔍 Esplora le Religioni – Clicca per confrontare!</h3>
+        <div class="religion-selector">
+            <button class="religion-tab active" id="tab-shinto" onclick="showReligion('shinto', this)">⛩️ Scintoismo</button>
+            <button class="religion-tab" id="tab-buddismo" onclick="showReligion('buddismo', this)">☸️ Buddismo</button>
+        </div>
+        <div class="religion-detail" id="religionDetail"></div>
+    </div>
+
+    <div class="content-grid">
+        <div class="card">
+            <h3>⛩️ I Luoghi Sacri</h3>
+            <div class="sacred-places">
+                <div class="sacred-place" onclick="showSacredInfo('jinja')">
+                    <span class="sp-icon">⛩️</span>
+                    <div class="sp-info"><div class="sp-name">Jinja (神社)</div><div class="sp-sub">Santuario shintoista</div></div>
+                </div>
+                <div class="sacred-place" onclick="showSacredInfo('tera')">
+                    <span class="sp-icon">🏯</span>
+                    <div class="sp-info"><div class="sp-name">Tera / Ji (寺)</div><div class="sp-sub">Tempio buddista</div></div>
+                </div>
+                <div class="sacred-place" onclick="showSacredInfo('torii')">
+                    <span class="sp-icon">🚪</span>
+                    <div class="sp-info"><div class="sp-name">Torii (鳥居)</div><div class="sp-sub">Portale sacro shintoista</div></div>
+                </div>
+                <div class="sacred-place" onclick="showSacredInfo('pagoda')">
+                    <span class="sp-icon">🗼</span>
+                    <div class="sp-info"><div class="sp-name">Pagoda</div><div class="sp-sub">Torre buddista</div></div>
+                </div>
+            </div>
+            <div class="info-panel" id="sacredInfoPanel" style="margin-top:0.9rem">👆 Clicca su un luogo sacro per scoprirlo!</div>
+        </div>
+
+        <div class="card">
+            <h3>🌸 La Convivenza</h3>
+            <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1rem">In Giappone si dice:</p>
+            <blockquote class="quote">"Nati shintoisti, sposati shintoisti, morti buddisti."<br><span class="quote-author">— Proverbio giapponese</span></blockquote>
+            <div class="info-list" style="margin-top:1rem">
+                <div class="info-item">👶 <span><strong>Nascita e matrimonio:</strong> cerimonia shintoista</span></div>
+                <div class="info-item">🕯️ <span><strong>Funerali:</strong> cerimonia buddista</span></div>
+                <div class="info-item">🌸 <span><strong>Feste stagionali:</strong> Matsuri (shintoiste)</span></div>
+                <div class="info-item">📿 <span><strong>Meditazione:</strong> pratica buddista</span></div>
+                <div class="info-item">🏮 <span><strong>Anno Nuovo:</strong> visita al santuario (shintoismo)</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-bottom:1.5rem">
+        <h3>🎯 Mini Quiz – Religioni</h3>
+        <p class="quiz-question">Cosa rappresenta il Torii (⛩️) all'ingresso dei santuari shintoisti?</p>
+        <div class="quiz-options">
+            <button class="quiz-btn" onclick="checkReligioniQuiz(this, false)">Un cancello riservato ai sacerdoti</button>
+            <button class="quiz-btn" onclick="checkReligioniQuiz(this, true)">La porta tra il mondo profano e quello sacro</button>
+            <button class="quiz-btn" onclick="checkReligioniQuiz(this, false)">Un monumento in memoria dei caduti</button>
+            <button class="quiz-btn" onclick="checkReligioniQuiz(this, false)">Un simbolo puramente artistico</button>
+        </div>
+        <div class="info-panel" id="religioniQuizFeedback" style="min-height:50px;margin-top:0.8rem"></div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="btn btn-prev" onclick="navigateTo('disciplina')">← Disciplina</button>
+        <button class="btn btn-next" onclick="navigateTo('quiz')">Quiz Finale 📝 →</button>
+    </div>
+</section>
+
+<!-- ===== QUIZ FINALE ===== -->
+<section id="quiz" class="section">
+    <div class="section-header">
+        <h2>📝 Quiz Finale</h2>
+        <p>Quanto hai imparato sul Giappone?</p>
+    </div>
+
+    <div class="card card-quiz-final">
+        <!-- START SCREEN -->
+        <div id="quizStart">
+            <div style="font-size:4rem;text-align:center;animation:float 3s ease-in-out infinite">🎌</div>
+            <h3 style="text-align:center;font-size:1.6rem;border:none;margin-bottom:0.5rem">Sei pronto per il Quiz?</h3>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:1.5rem">6 domande su tutto quello che hai visto. Dimostra quello che sai!</p>
+            <div class="quiz-rules">
+                <div class="rule">✅ 6 domande totali</div>
+                <div class="rule">🎯 Una sola risposta per domanda</div>
+                <div class="rule">⭐ Punteggio finale con valutazione</div>
+            </div>
+            <button class="btn btn-start-quiz" onclick="startQuiz()">🚀 Inizia il Quiz!</button>
+        </div>
+
+        <!-- QUESTIONS -->
+        <div id="quizQuestions" style="display:none">
+            <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+            <div class="question-counter">Domanda <span id="questionNum">1</span> di 6</div>
+            <div id="questionContainer"></div>
+        </div>
+
+        <!-- RESULTS -->
+        <div id="quizResult" style="display:none">
+            <div class="result-animation" id="resultAnimation">🎌</div>
+            <h3 class="result-title" id="resultTitle"></h3>
+            <div class="score-display"><span id="scoreText"></span> / 6</div>
+            <p class="result-message" id="resultMessage"></p>
+            <div class="result-badges" id="resultBadges"></div>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
+                <button class="btn btn-start-quiz" onclick="restartQuiz()">🔄 Rifai il Quiz</button>
+                <button class="btn btn-secondary" onclick="navigateTo('home')">🏠 Torna alla Home</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>🎌 Tesina di Terza Media – Edoardo Filizola</p>
+    <p style="font-size:0.8rem;margin-top:0.4rem;opacity:0.5">La forza: natura, guerra e disciplina – un viaggio nel Giappone</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
