@@ -1560,3 +1560,19 @@ footer {
     .kw-plus, .kw-equals { font-size: 1.3rem; }
     .kw-kanji { font-size: 1.3rem; }
 }
+
+.kb-combo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 0.6rem;
+}
+.kb-combo-label {
+    text-align: center;
+    font-size: 0.68rem;
+    color: var(--text-3);
+    margin-top: 0.35rem;
+}
+@media (max-width: 500px) {
+    .kb-combo { grid-template-columns: 1fr; }
+}
