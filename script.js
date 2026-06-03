@@ -558,29 +558,13 @@ function animateCounter(id, from, to, duration, formatter) {
    ============================================ */
 const RELIGION_DATA = {
     shinto: {
-        titolo: '⛩️ Scintoismo – La Via degli Dei',
-        intro:  'Nato in Giappone, lo Scintoismo (神道 Shintō) adora i "kami": spiriti o forze divine presenti in ogni cosa – montagne, fiumi, vento, animali. Non ha un fondatore né un testo sacro unico, ma è parte profondissima dell\'identità giapponese da millenni.',
-        items: [
-            { icon:'⛩️', label:'Luogo di culto',   value:'Santuario (Jinja 神社)' },
-            { icon:'🌊', label:'Oggetto di culto', value:'Kami – spiriti della natura' },
-            { icon:'📖', label:'Testo sacro',       value:'Kojiki (712 d.C.) – Cronache antiche' },
-            { icon:'💒', label:'Cerimonie tipiche', value:'Nascita, matrimonio, feste stagionali' },
-            { icon:'🌸', label:'Festa principale',  value:'Matsuri – festival comunitari' },
-            { icon:'📅', label:'Origine',           value:'Indigena – millenni prima di Cristo' }
-        ],
+        titolo: '⛩️ Scintoismo',
+        intro:  'Lo Scintoismo è la religione originaria del Giappone. I suoi fedeli adorano i "kami", cioè degli spiriti che vivono nelle cose naturali: montagne, fiumi, alberi, vento. Non ha un fondatore e non ha un libro sacro unico. I giapponesi la praticano da migliaia di anni, soprattutto per le nascite, i matrimoni e le grandi feste stagionali.',
         accentColor: 'var(--red)'
     },
     buddismo: {
-        titolo: '☸️ Buddismo – La Via dell\'Illuminazione',
-        intro:  'Il Buddismo (仏教 Bukkyō) arrivò in Giappone nel VI secolo d.C. dall\'India, passando per Cina e Corea. Insegna che la sofferenza nasce dal desiderio e che si può raggiungere la pace interiore (nirvana) attraverso la meditazione e una vita retta.',
-        items: [
-            { icon:'🏯', label:'Luogo di culto',   value:'Tempio (Tera / Ji 寺)' },
-            { icon:'🧘', label:'Oggetto di culto', value:'Buddha – il Risvegliato' },
-            { icon:'📿', label:'Testo sacro',       value:'Sutra – insegnamenti del Buddha' },
-            { icon:'🕯️', label:'Cerimonie tipiche', value:'Funerali, anniversari dei defunti' },
-            { icon:'🎑', label:'Festa principale',  value:'Obon – commemorazione degli antenati' },
-            { icon:'📅', label:'Origine',           value:'India, V sec. a.C. – in Giappone dal 552 d.C.' }
-        ],
+        titolo: '☸️ Buddismo',
+        intro:  'Il Buddismo è arrivato in Giappone nel 552 d.C. dall\'India, passando prima per la Cina e la Corea. Insegna che la sofferenza nasce dal voler troppo, e che si può trovare la pace interiore – chiamata nirvana – meditando e vivendo in modo giusto. In Giappone viene seguito soprattutto per i funerali e le cerimonie in memoria dei defunti.',
         accentColor: 'var(--gold)'
     }
 };
@@ -598,18 +582,7 @@ function showReligion(type, btn) {
 
     panel.innerHTML =
         '<div class="religion-detail-title" style="border-left:3px solid ' + d.accentColor + ';padding-left:0.6rem">' + d.titolo + '</div>' +
-        '<p class="religion-detail-intro">' + d.intro + '</p>' +
-        '<div class="religion-items">' +
-            d.items.map(item =>
-                '<div class="religion-item">' +
-                    '<span class="ri-icon">' + item.icon + '</span>' +
-                    '<div class="ri-text">' +
-                        '<span class="ri-label">' + item.label + '</span>' +
-                        '<span class="ri-value">' + item.value + '</span>' +
-                    '</div>' +
-                '</div>'
-            ).join('') +
-        '</div>';
+        '<p class="religion-detail-intro">' + d.intro + '</p>';
 
     panel.style.animation = 'none';
     void panel.offsetWidth;
@@ -619,19 +592,19 @@ function showReligion(type, btn) {
 const SACRED_DATA = {
     jinja:  {
         title: '⛩️ Il Santuario (Jinja)',
-        text:  'Il Jinja è il luogo di culto shintoista. Si riconosce subito dall\'ingresso con il caratteristico Torii rosso. All\'interno vi è il "honden", il sacrario dove abita il kami. I fedeli si avvicinano all\'altare, fanno una piccola offerta, inchinano due volte, battono due volte le mani e pregano in silenzio.'
+        text:  'Il Jinja è il posto dove si prega nello Scintoismo. Si riconosce subito dal Torii rosso all\'ingresso. Dentro c\'è il sacrario dove "vive" il kami. Per pregare ci si avvicina, si fa una piccola offerta, ci si inchina due volte e si battono le mani due volte.'
     },
     tera:   {
-        title: '🏯 Il Tempio (Tera / Ji)',
-        text:  'Il Tera è il luogo di culto buddista. Si distingue dal santuario per le statue del Buddha, i turiboli di incenso che bruciano e le caratteristiche pagode nel cortile. I monaci buddisti vivono, studiano e meditano nei templi. L\'incenso che sale rappresenta la purificazione dello spirito.'
+        title: '🏯 Il Tempio (Tera)',
+        text:  'Il Tera è il posto dove si prega nel Buddismo. Si riconosce per le statue del Buddha, l\'incenso che brucia e le pagode nel cortile. I monaci buddisti ci vivono, studiano e meditano ogni giorno.'
     },
     torii:  {
         title: '⛩️ Il Torii (鳥居)',
-        text:  'Il Torii è il portale che segna il confine tra il mondo ordinario e lo spazio sacro del santuario. Di solito è dipinto di rosso cinabro, colore che allontana il male. Il più famoso è quello del Santuario di Itsukushima sull\'isola di Miyajima: sembra galleggiare sull\'acqua durante l\'alta marea. È uno dei simboli più riconoscibili del Giappone.'
+        text:  'Il Torii è il portale tipico dei santuari shintoisti. Indica il confine tra il mondo normale e lo spazio sacro: quando lo attraversi, entri in un posto speciale. Di solito è rosso, perché quel colore allontana il male. Il più famoso è quello di Miyajima, che sembra galleggiare sull\'acqua!'
     },
     pagoda: {
         title: '🗼 La Pagoda',
-        text:  'La pagoda è la torre tipica dell\'architettura buddista giapponese. Deriva dallo stupa indiano, un tumulo funerario. Ogni piano rappresenta un elemento cosmico: terra, acqua, fuoco, vento, spazio. Le pagode contengono reliquie sacre. La pagoda a cinque piani del Tempio Hōryū-ji, costruita nel VII secolo, è una delle costruzioni in legno più antiche del mondo.'
+        text:  'La pagoda è la torre dei templi buddisti. Ha più piani e ognuno rappresenta un elemento: terra, acqua, fuoco, vento e cielo. Dentro si conservano oggetti sacri. Quella del Tempio Hōryū-ji ha più di 1.300 anni ed è una delle costruzioni in legno più vecchie del mondo!'
     }
 };
 
