@@ -1,7 +1,7 @@
 /* ============================================
    NAVIGAZIONE SPA
    ============================================ */
-const SECTIONS = ['home', 'natura', 'arte', 'guerra', 'disciplina', 'religioni', 'quiz'];
+const SECTIONS = ['home', 'natura', 'arte', 'guerra', 'disciplina', 'religioni', 'musica', 'quiz'];
 let current = 'home';
 
 function navigateTo(id) {
@@ -659,6 +659,35 @@ function checkReligioniQuiz(btn, isCorrect) {
     } else {
         fb.innerHTML = '❌ <strong style="color:#ffaaaa">Sbagliato.</strong> La risposta è <strong>la porta tra il mondo profano e quello sacro</strong>. Il Torii è il simbolo del confine tra la dimensione umana e quella divina.';
     }
+}
+
+/* ============================================
+   MUSICA – KARAOKE WORD BREAKDOWN
+   ============================================ */
+const KARA_DATA = {
+    kara: {
+        kanji: '空 (kara)',
+        color: 'var(--red)',
+        cls: 'active-kara',
+        detail: '空 significa <strong style="color:var(--red)">vuoto / senza contenuto</strong>. Nel karaoke indica che manca il cantante originale: la musica c\'è, ma la voce è vuota — sei tu a riempirla!'
+    },
+    oke: {
+        kanji: 'オーケストラ (ōkesutora)',
+        color: 'var(--gold)',
+        cls: 'active-oke',
+        detail: 'オケ è l\'abbreviazione di <strong style="color:var(--gold)">オーケストラ (orchestra)</strong>. Indica la base musicale che accompagna il cantante. Karaoke = "orchestra vuota" 🎵'
+    }
+};
+
+function showKaraPart(part, btn) {
+    document.querySelectorAll('.kw-part').forEach(p => p.classList.remove('active-kara','active-oke'));
+    btn.classList.add(KARA_DATA[part].cls);
+    const detail = document.getElementById('kwDetail');
+    detail.innerHTML = KARA_DATA[part].detail;
+    detail.classList.add('visible');
+    detail.style.animation = 'none';
+    void detail.offsetWidth;
+    detail.style.animation = 'fadeIn 0.3s ease';
 }
 
 /* ============================================

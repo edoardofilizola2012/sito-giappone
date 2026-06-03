@@ -1477,3 +1477,86 @@ footer {
     .vc-pct     { font-size: 1.15rem; }
     .venn-bar-legend { gap: 0.3rem 0.6rem; }
 }
+
+/* ============================================
+   MUSICA – KARAOKE
+   ============================================ */
+.btn-musica {
+    background: linear-gradient(135deg, #0a2a50, #1a5a9a);
+    color: #fff;
+    border: 1px solid #2a7acc;
+    box-shadow: 0 4px 16px rgba(26,90,154,0.25);
+}
+
+/* Karaoke word breakdown */
+.karaoke-word {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+.kw-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.75rem 1.1rem;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s, background 0.2s;
+    min-width: 80px;
+}
+.kw-part:hover { transform: translateY(-2px); border-color: var(--border-light); }
+.kw-part.active-kara { border-color: var(--red);  background: rgba(204,34,34,0.1); }
+.kw-part.active-oke  { border-color: var(--gold); background: rgba(212,160,23,0.1); }
+
+.kw-jp    { font-size: 1.3rem; color: var(--text-1); letter-spacing: 3px; }
+.kw-kanji { font-size: 1.6rem; font-weight: 700; color: #fff; line-height: 1; }
+.kw-hint  { font-size: 0.62rem; color: var(--text-3); margin-top: 0.1rem; }
+.kw-part.active-kara .kw-hint,
+.kw-part.active-oke  .kw-hint { opacity: 0; }
+
+.kw-plus, .kw-equals {
+    font-size: 1.8rem;
+    color: var(--text-3);
+    font-weight: 300;
+    flex-shrink: 0;
+}
+
+.kw-result-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(212,160,23,0.08);
+    border: 1px solid rgba(212,160,23,0.2);
+    border-radius: 10px;
+    padding: 0.75rem 1.1rem;
+    min-width: 110px;
+    text-align: center;
+}
+.kw-result-jp { font-size: 1.5rem; color: var(--gold-light); letter-spacing: 2px; }
+.kw-result-it { font-size: 0.72rem; color: var(--text-2); margin-top: 0.2rem; }
+
+.kw-detail {
+    min-height: 40px;
+    margin-top: 0.7rem;
+    padding: 0.6rem 0.9rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: var(--text-2);
+    line-height: 1.6;
+    animation: fadeIn 0.3s ease;
+    display: none;
+}
+.kw-detail.visible { display: block; }
+
+@media (max-width: 500px) {
+    .karaoke-word { gap: 0.5rem; }
+    .kw-plus, .kw-equals { font-size: 1.3rem; }
+    .kw-kanji { font-size: 1.3rem; }
+}

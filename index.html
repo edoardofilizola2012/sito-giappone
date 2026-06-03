@@ -21,6 +21,7 @@
         <li><a href="#" class="nav-link" onclick="navigateTo('guerra');return false;">💣 Guerra</a></li>
         <li><a href="#" class="nav-link" onclick="navigateTo('disciplina');return false;">🥋 Disciplina</a></li>
         <li><a href="#" class="nav-link" onclick="navigateTo('religioni');return false;">⛩️ Religioni</a></li>
+        <li><a href="#" class="nav-link" onclick="navigateTo('musica');return false;">🎤 Musica</a></li>
         <li><a href="#" class="nav-link" onclick="navigateTo('quiz');return false;">📝 Quiz</a></li>
     </ul>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
@@ -41,6 +42,7 @@
                 <button class="btn btn-guerra"     onclick="navigateTo('guerra')">💣 Esplora la Guerra</button>
                 <button class="btn btn-disciplina" onclick="navigateTo('disciplina')">🥋 Esplora la Disciplina</button>
                 <button class="btn btn-religioni"  onclick="navigateTo('religioni')">⛩️ Esplora le Religioni</button>
+                <button class="btn btn-musica"     onclick="navigateTo('musica')">🎤 Esplora la Musica</button>
             </div>
             <button class="btn btn-secondary" onclick="navigateTo('quiz')" style="margin-top:1rem;max-width:320px">📝 Vai al Quiz Finale</button>
         </div>
@@ -639,6 +641,224 @@
 
     <div class="nav-buttons">
         <button class="btn btn-prev" onclick="navigateTo('disciplina')">← Disciplina</button>
+        <button class="btn btn-next" onclick="navigateTo('musica')">Musica 🎤 →</button>
+    </div>
+</section>
+
+<!-- ===== MUSICA – KARAOKE ===== -->
+<section id="musica" class="section">
+    <div class="section-header">
+        <h2>🎤 Musica – Il Karaoke</h2>
+        <p>L'invenzione giapponese che ha conquistato il mondo</p>
+    </div>
+
+    <!-- Card 1: Significato della parola (interattivo) -->
+    <div class="card" style="margin-bottom:1.4rem">
+        <h3>🔤 Cosa Significa "カラオケ"?</h3>
+        <p style="color:var(--text-secondary);margin-bottom:1.2rem">La parola <strong style="color:var(--text-1)">karaoke</strong> è giapponese e nasce dall'unione di due parole. Clicca su ciascuna parte per scoprirne il significato!</p>
+        <div class="karaoke-word">
+            <div class="kw-part" id="kw-kara" onclick="showKaraPart('kara', this)">
+                <div class="kw-jp">から</div>
+                <div class="kw-kanji">空</div>
+                <div class="kw-hint">clicca!</div>
+            </div>
+            <div class="kw-plus">+</div>
+            <div class="kw-part" id="kw-oke" onclick="showKaraPart('oke', this)">
+                <div class="kw-jp">オケ</div>
+                <div class="kw-kanji">オーケ</div>
+                <div class="kw-hint">clicca!</div>
+            </div>
+            <div class="kw-equals">=</div>
+            <div class="kw-result-box">
+                <div class="kw-result-jp">カラオケ</div>
+                <div class="kw-result-it" id="kwResult">Orchestra vuota</div>
+            </div>
+        </div>
+        <div class="kw-detail" id="kwDetail"></div>
+        <div class="info-list" style="margin-top:1.2rem">
+            <div class="info-item">📅 <span><strong>Anno di nascita:</strong> 1971, Kobe (Giappone)</span></div>
+            <div class="info-item">👨 <span><strong>Inventore:</strong> Daisuke Inoue, musicista e batterista</span></div>
+            <div class="info-item">💡 <span><strong>L'idea:</strong> un suo cliente voleva cantare con la sua musica in viaggio — lui costruì una macchina</span></div>
+            <div class="info-item">🌍 <span><strong>Oggi:</strong> praticato in oltre 50 paesi nel mondo</span></div>
+        </div>
+    </div>
+
+    <!-- Griglia: Karaoke Box + Macchina a gettoni -->
+    <div class="content-grid" style="margin-bottom:1.4rem">
+
+        <!-- Karaoke Box -->
+        <div class="card">
+            <h3>🏢 Le Karaoke Box</h3>
+            <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1rem">Negli anni '80 in Giappone nascono le <strong style="color:var(--text-1)">karaoke box</strong>: stanze private che si affittano all'ora. Puoi andarci con gli amici, scegliere le canzoni da un catalogo enorme e cantare senza vergogna davanti a nessuno.</p>
+            <div class="info-list" style="margin-bottom:1rem">
+                <div class="info-item">🎵 <span><strong>Catalogo:</strong> fino a 100.000 canzoni</span></div>
+                <div class="info-item">🍜 <span><strong>Servizio:</strong> cibo e bevande direttamente in stanza</span></div>
+                <div class="info-item">🕐 <span><strong>Costo:</strong> circa 300–500 ¥ all'ora a persona</span></div>
+                <div class="info-item">🏙️ <span><strong>In Giappone:</strong> oltre 100.000 locali karaoke</span></div>
+            </div>
+            <!-- SVG Karaoke Box -->
+            <svg viewBox="0 0 400 230" style="width:100%;border-radius:10px;display:block" aria-label="Illustrazione di una karaoke box">
+                <defs>
+                    <linearGradient id="kbRoomBg" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#140520"/>
+                        <stop offset="100%" stop-color="#0a0312"/>
+                    </linearGradient>
+                    <linearGradient id="kbTvGlow" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#1a4a8a"/>
+                        <stop offset="100%" stop-color="#082040"/>
+                    </linearGradient>
+                </defs>
+                <!-- Room -->
+                <rect width="400" height="230" fill="url(#kbRoomBg)"/>
+                <!-- Neon strips ceiling -->
+                <rect x="0" y="0" width="400" height="5" fill="#1a0630"/>
+                <rect x="8"   y="1" width="175" height="3" rx="1.5" fill="rgba(255,40,180,0.95)"/>
+                <rect x="217" y="1" width="175" height="3" rx="1.5" fill="rgba(40,160,255,0.95)"/>
+                <!-- Pink neon glow -->
+                <rect x="0" y="0" width="200" height="18" fill="rgba(255,40,180,0.05)"/>
+                <rect x="200" y="0" width="200" height="18" fill="rgba(40,160,255,0.05)"/>
+                <!-- Back wall -->
+                <rect x="40" y="5" width="320" height="155" fill="rgba(255,255,255,0.015)"/>
+                <!-- TV frame -->
+                <rect x="100" y="18" width="200" height="118" rx="6" fill="#0a0a0a"/>
+                <rect x="104" y="22" width="192" height="110" rx="4" fill="url(#kbTvGlow)"/>
+                <!-- Lyrics -->
+                <text x="200" y="62" text-anchor="middle" fill="rgba(255,255,255,0.92)" font-size="13" font-family="serif">♪ さ く ら　さ く ら ♪</text>
+                <text x="200" y="82" text-anchor="middle" fill="#ffee44" font-size="11" letter-spacing="8">_ _ _ _ _ _</text>
+                <!-- Score bar -->
+                <rect x="115" y="96" width="170" height="7" rx="3.5" fill="rgba(0,0,0,0.5)"/>
+                <rect x="115" y="96" width="128" height="7" rx="3.5" fill="rgba(70,210,70,0.85)"/>
+                <text x="200" y="118" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-size="8">SCORE  88</text>
+                <!-- TV stand -->
+                <rect x="190" y="136" width="20" height="7" rx="3" fill="#222"/>
+                <rect x="183" y="141" width="34" height="4" rx="2" fill="#1a1a1a"/>
+                <!-- Left sofa -->
+                <rect x="8"  y="175" width="76" height="34" rx="9" fill="#5a0d0d"/>
+                <rect x="8"  y="160" width="76" height="19" rx="7" fill="#721111"/>
+                <rect x="8"  y="175" width="14" height="34" rx="6" fill="#641010"/>
+                <rect x="70" y="175" width="14" height="34" rx="6" fill="#641010"/>
+                <!-- Right sofa -->
+                <rect x="316" y="175" width="76" height="34" rx="9" fill="#5a0d0d"/>
+                <rect x="316" y="160" width="76" height="19" rx="7" fill="#721111"/>
+                <rect x="316" y="175" width="14" height="34" rx="6" fill="#641010"/>
+                <rect x="378" y="175" width="14" height="34" rx="6" fill="#641010"/>
+                <!-- Table -->
+                <rect x="158" y="183" width="84" height="26" rx="6" fill="#1c1008"/>
+                <!-- Mic left (silver) -->
+                <rect x="145" y="160" width="4" height="20" fill="#777"/>
+                <ellipse cx="147" cy="156" rx="8" ry="10" fill="#444"/>
+                <ellipse cx="147" cy="154" rx="5" ry="6.5" fill="#222"/>
+                <!-- Mic right (red) -->
+                <rect x="251" y="160" width="4" height="20" fill="#777"/>
+                <ellipse cx="253" cy="156" rx="8" ry="10" fill="#aa2020"/>
+                <ellipse cx="253" cy="154" rx="5" ry="6.5" fill="#881414"/>
+                <!-- Floor -->
+                <rect x="0" y="207" width="400" height="23" fill="#100606"/>
+                <!-- Label -->
+                <text x="200" y="222" text-anchor="middle" fill="rgba(255,90,200,0.55)" font-size="9" letter-spacing="5" font-family="monospace">✦  KARAOKE  BOX  ✦</text>
+            </svg>
+        </div>
+
+        <!-- La Prima Macchina -->
+        <div class="card">
+            <h3>🪙 La Prima Macchina (1971)</h3>
+            <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:1rem">La prima macchina karaoke si chiamava <strong style="color:var(--text-1)">Juke-8</strong>. Era una semplice scatola con un lettore a nastro, un amplificatore e un microfono. Si inseriva una moneta da <strong style="color:var(--gold)">100 yen</strong> e si cantava una canzone.</p>
+            <div class="info-list" style="margin-bottom:1rem">
+                <div class="info-item">📦 <span><strong>Nome:</strong> Juke-8</span></div>
+                <div class="info-item">🪙 <span><strong>Costo per canzone:</strong> 100 ¥ (circa 0,60 €)</span></div>
+                <div class="info-item">📼 <span><strong>Tecnologia:</strong> cassetta a nastro magnetico</span></div>
+                <div class="info-item">🏪 <span><strong>Dove:</strong> bar, ristoranti, locali notturni</span></div>
+            </div>
+            <!-- SVG Coin Machine -->
+            <svg viewBox="0 0 280 320" style="width:100%;max-width:260px;border-radius:10px;display:block;margin:0 auto" aria-label="Illustrazione della prima macchina karaoke Juke-8">
+                <defs>
+                    <linearGradient id="jkBody" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%"   stop-color="#c49a00"/>
+                        <stop offset="50%"  stop-color="#8B6914"/>
+                        <stop offset="100%" stop-color="#5a4000"/>
+                    </linearGradient>
+                    <linearGradient id="jkScreen" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#003a10"/>
+                        <stop offset="100%" stop-color="#001508"/>
+                    </linearGradient>
+                </defs>
+                <rect width="280" height="320" fill="#0d0d0d"/>
+                <!-- Machine body -->
+                <rect x="50" y="15" width="160" height="285" rx="12" fill="url(#jkBody)"/>
+                <rect x="53" y="17" width="16"  height="281" rx="7"  fill="rgba(255,255,255,0.07)"/>
+                <rect x="50" y="15" width="160" height="285" rx="12" fill="none" stroke="#3a2500" stroke-width="2"/>
+                <!-- Brand plate -->
+                <rect x="62" y="24" width="136" height="30" rx="5" fill="#1a1000"/>
+                <text x="130" y="38" text-anchor="middle" fill="#f0c040" font-size="15" font-weight="bold" font-family="monospace" letter-spacing="3">JUKE-8</text>
+                <text x="130" y="49" text-anchor="middle" fill="#888" font-size="7"  font-family="monospace" letter-spacing="1">KARAOKE SYSTEM  1971</text>
+                <!-- Screen -->
+                <rect x="62" y="62" width="136" height="72" rx="4" fill="#111"/>
+                <rect x="65" y="65" width="130" height="66" rx="3" fill="url(#jkScreen)"/>
+                <text x="130" y="82"  text-anchor="middle" fill="#44ff66" font-size="8" font-family="monospace">▶ 001  さくら</text>
+                <text x="130" y="95"  text-anchor="middle" fill="#44ff66" font-size="8" font-family="monospace">  002  うみ</text>
+                <text x="130" y="108" text-anchor="middle" fill="#44ff66" font-size="8" font-family="monospace">  003  ふじさん</text>
+                <text x="130" y="121" text-anchor="middle" fill="#44ff66" font-size="8" font-family="monospace">  004  こいのうた</text>
+                <!-- Speaker grille -->
+                <rect x="62" y="142" width="136" height="52" rx="4" fill="#111"/>
+                <g fill="#2a1a00">
+                    <circle cx="82"  cy="155" r="2.2"/><circle cx="95"  cy="155" r="2.2"/><circle cx="108" cy="155" r="2.2"/><circle cx="121" cy="155" r="2.2"/><circle cx="134" cy="155" r="2.2"/><circle cx="147" cy="155" r="2.2"/><circle cx="160" cy="155" r="2.2"/><circle cx="173" cy="155" r="2.2"/>
+                    <circle cx="82"  cy="167" r="2.2"/><circle cx="95"  cy="167" r="2.2"/><circle cx="108" cy="167" r="2.2"/><circle cx="121" cy="167" r="2.2"/><circle cx="134" cy="167" r="2.2"/><circle cx="147" cy="167" r="2.2"/><circle cx="160" cy="167" r="2.2"/><circle cx="173" cy="167" r="2.2"/>
+                    <circle cx="82"  cy="179" r="2.2"/><circle cx="95"  cy="179" r="2.2"/><circle cx="108" cy="179" r="2.2"/><circle cx="121" cy="179" r="2.2"/><circle cx="134" cy="179" r="2.2"/><circle cx="147" cy="179" r="2.2"/><circle cx="160" cy="179" r="2.2"/><circle cx="173" cy="179" r="2.2"/>
+                </g>
+                <!-- Number buttons 3×3 -->
+                <rect x="66" y="202" width="128" height="62" rx="4" fill="rgba(0,0,0,0.25)"/>
+                <rect x="72"  y="207" width="30" height="15" rx="3" fill="#b8700a"/><text x="87"  y="219" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">1</text>
+                <rect x="115" y="207" width="30" height="15" rx="3" fill="#b8700a"/><text x="130" y="219" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">2</text>
+                <rect x="158" y="207" width="30" height="15" rx="3" fill="#b8700a"/><text x="173" y="219" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">3</text>
+                <rect x="72"  y="228" width="30" height="15" rx="3" fill="#b8700a"/><text x="87"  y="240" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">4</text>
+                <rect x="115" y="228" width="30" height="15" rx="3" fill="#b8700a"/><text x="130" y="240" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">5</text>
+                <rect x="158" y="228" width="30" height="15" rx="3" fill="#b8700a"/><text x="173" y="240" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">6</text>
+                <rect x="72"  y="249" width="30" height="15" rx="3" fill="#b8700a"/><text x="87"  y="261" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">7</text>
+                <rect x="115" y="249" width="30" height="15" rx="3" fill="#b8700a"/><text x="130" y="261" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">8</text>
+                <rect x="158" y="249" width="30" height="15" rx="3" fill="#b8700a"/><text x="173" y="261" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">9</text>
+                <!-- Coin slot -->
+                <rect x="92" y="272" width="76" height="11" rx="4" fill="#0a0800"/>
+                <rect x="108" y="274" width="44" height="7" rx="3" fill="#050400"/>
+                <text x="130" y="292" text-anchor="middle" fill="#f0c040" font-size="9" font-family="monospace" font-weight="bold">← inserisci 100¥</text>
+                <!-- Coin -->
+                <ellipse cx="222" cy="277" rx="18" ry="18" fill="#c8a000" stroke="#8a6800" stroke-width="2"/>
+                <ellipse cx="222" cy="277" rx="13" ry="13" fill="#d4b000"/>
+                <text x="222" y="273" text-anchor="middle" fill="#5a3800" font-size="7"  font-weight="bold">100</text>
+                <text x="222" y="283" text-anchor="middle" fill="#5a3800" font-size="8">円</text>
+                <polygon points="206,274 199,277 206,280" fill="#f0c040"/>
+                <line x1="206" y1="277" x2="213" y2="277" stroke="#f0c040" stroke-width="2"/>
+                <!-- Feet -->
+                <rect x="68"  y="297" width="26" height="12" rx="4" fill="#3a2800"/>
+                <rect x="166" y="297" width="26" height="12" rx="4" fill="#3a2800"/>
+                <!-- Floor shadow -->
+                <ellipse cx="130" cy="312" rx="72" ry="7" fill="rgba(0,0,0,0.45)"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Card: Una cosa seria in Giappone -->
+    <div class="card" style="margin-bottom:1.5rem">
+        <h3>🇯🇵 Il Karaoke in Giappone: una cosa seria!</h3>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:1.1rem">In Italia il karaoke è un gioco da bar. In Giappone è <em>cultura</em>. Si fa dopo il lavoro con i colleghi, ai compleanni, alle feste scolastiche. C'è persino chi lo pratica da solo per rilassarsi o allenarsi a cantare meglio.</p>
+        <div class="content-grid" style="gap:0.75rem;margin-bottom:1rem">
+            <div class="info-list">
+                <div class="info-item">🏢 <span><strong>Uffici:</strong> i colleghi ci vanno insieme dopo il lavoro (nomikai)</span></div>
+                <div class="info-item">💑 <span><strong>Appuntamenti:</strong> luogo popolarissimo per i primi appuntamenti</span></div>
+                <div class="info-item">👴 <span><strong>Anziani:</strong> molti over-70 cantano regolarmente per tenersi in forma</span></div>
+                <div class="info-item">🏆 <span><strong>Gare:</strong> esistono veri campionati nazionali di karaoke</span></div>
+            </div>
+            <div class="info-list">
+                <div class="info-item">📊 <span><strong>100.000+</strong> locali karaoke solo in Giappone</span></div>
+                <div class="info-item">🎵 <span><strong>1 miliardo</strong> di canzoni cantate ogni anno in Giappone</span></div>
+                <div class="info-item">😤 <span><strong>Hitokaraoke:</strong> karaoke da soli — ormai normalissimo</span></div>
+                <div class="info-item">🩺 <span><strong>Benefici:</strong> medici giapponesi lo consigliano per ridurre lo stress</span></div>
+            </div>
+        </div>
+        <blockquote class="quote">"Il karaoke non è uno spettacolo. È una liberazione."<br><span class="quote-author">— Daisuke Inoue, inventore del karaoke</span></blockquote>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="btn btn-prev" onclick="navigateTo('religioni')">← Religioni</button>
         <button class="btn btn-next" onclick="navigateTo('quiz')">Quiz Finale 📝 →</button>
     </div>
 </section>
