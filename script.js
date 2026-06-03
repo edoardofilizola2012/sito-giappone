@@ -4,7 +4,23 @@
 const SECTIONS = ['home', 'natura', 'arte', 'guerra', 'disciplina', 'religioni', 'musica', 'quiz'];
 let current = 'home';
 
+function toggleMenu() {
+    const links = document.getElementById('navLinks');
+    const toggle = document.getElementById('navToggle');
+    const open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+function closeMenu() {
+    const links = document.getElementById('navLinks');
+    const toggle = document.getElementById('navToggle');
+    if (links) links.classList.remove('open');
+    if (toggle) { toggle.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+}
+
 function navigateTo(id) {
+    closeMenu();
     if (id === current) return;
 
     const prev = document.getElementById(current);

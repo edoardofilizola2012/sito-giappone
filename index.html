@@ -13,8 +13,11 @@
 
 <!-- NAVBAR -->
 <nav id="navbar">
-    <div class="nav-logo">🗾 Giappone</div>
-    <ul class="nav-links">
+    <a href="#" class="nav-logo" onclick="navigateTo('home');return false;">🗾 Giappone</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
         <li><a href="#" class="nav-link active" onclick="navigateTo('home');return false;">Home</a></li>
         <li><a href="#" class="nav-link" onclick="navigateTo('natura');return false;">🌊 Natura</a></li>
         <li><a href="#" class="nav-link" onclick="navigateTo('arte');return false;">🎨 Arte</a></li>
