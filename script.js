@@ -620,7 +620,7 @@ function showSacredInfo(place) {
 function checkReligioniQuiz(btn, isCorrect) {
     const fb = document.getElementById('religioniQuizFeedback');
     if (fb) {
-        fb.closest('.card').querySelectorAll('.quiz-btn').forEach(b => {
+        document.querySelectorAll('#religioni .quiz-btn').forEach(b => {
             b.disabled = true;
             if (b.textContent.trim() === 'Kami') b.classList.add('correct');
         });
@@ -745,10 +745,10 @@ const QUESTIONS = [
         exp: 'Il Monte Fuji è alto 3.776 metri ed è il punto più elevato del Giappone. È un vulcano ed è diventato simbolo della nazione!'
     },
     {
-        q: '⛩️ Quale delle seguenti è una caratteristica dello Scintoismo?',
-        opts: ['Crede nel karma e nella reincarnazione', 'Adora i "kami" (spiriti della natura)', 'Ha come fondatore il Buddha', 'Pratica la meditazione zen per il nirvana'],
+        q: '☸️ Come si chiama la pace interiore che si cerca di raggiungere nel Buddismo?',
+        opts: ['Karma', 'Nirvana', 'Matsuri', 'Kami'],
         correct: 1,
-        exp: 'Lo Scintoismo adora i "kami", cioè gli spiriti della natura presenti nelle montagne, nei fiumi, negli alberi e nel vento. È la religione originaria del Giappone.'
+        exp: 'Il nirvana è lo stato di pace interiore che si raggiunge nel Buddismo meditando e vivendo in modo giusto. Il Buddismo è arrivato in Giappone nel 552 d.C. dall\'India.'
     }
 ];
 
