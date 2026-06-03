@@ -433,7 +433,7 @@ function showWaveInfo(zone) {
    MINI QUIZ ARTE
    ============================================ */
 function checkArteQuiz(btn, isCorrect) {
-    document.querySelectorAll('.quiz-btn').forEach(b => {
+    document.querySelectorAll('#arte .quiz-btn').forEach(b => {
         b.disabled = true;
         if (b.textContent.trim() === '1831') b.classList.add('correct');
     });
