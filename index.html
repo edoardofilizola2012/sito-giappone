@@ -219,6 +219,26 @@
         </div>
     </div>
 
+    <div class="card card-interactive" style="margin-bottom:1.4rem">
+        <h3>☢️ Il Disastro di Fukushima (2011)</h3>
+        <p class="card-desc">L'11 marzo 2011 un terremoto di magnitudo 9.0 e il successivo tsunami colpirono la centrale nucleare di Fukushima Daiichi. È il più grave incidente nucleare dopo Chernobyl. Clicca sui riquadri per capire cosa successe davvero.</p>
+        <div class="martial-arts-grid">
+            <div class="martial-art" onclick="showFukushima('cosa', this)">
+                <div class="ma-icon">☢️</div><div class="ma-name">Cosa successe</div><div class="ma-hint">clicca!</div>
+            </div>
+            <div class="martial-art" onclick="showFukushima('vittime', this)">
+                <div class="ma-icon">🌊</div><div class="ma-name">Vittime dirette</div><div class="ma-hint">clicca!</div>
+            </div>
+            <div class="martial-art" onclick="showFukushima('tumori', this)">
+                <div class="ma-icon">🧬</div><div class="ma-name">Tumori</div><div class="ma-hint">clicca!</div>
+            </div>
+            <div class="martial-art" onclick="showFukushima('mutazioni', this)">
+                <div class="ma-icon">❓</div><div class="ma-name">Mutazioni?</div><div class="ma-hint">clicca!</div>
+            </div>
+        </div>
+        <div class="info-panel" id="fukushimaInfo">👆 Clicca su un riquadro per scoprire cosa è successo a Fukushima.</div>
+    </div>
+
     <div class="card card-map">
         <h3>🗾 Mappa del Giappone – Clicca per scoprire!</h3>
         <div class="japan-map-container">

@@ -400,6 +400,39 @@ function showTsunamiStep(n) {
     el.style.animation = 'fadeIn 0.3s ease';
 }
 
+/* ============================================
+   FUKUSHIMA (2011)
+   ============================================ */
+const FUKUSHIMA_DATA = {
+    cosa: {
+        title: '☢️ Cosa è successo',
+        text: 'L\'11 marzo 2011 un terremoto fortissimo (magnitudo 9.0) scatenò un enorme tsunami sulla costa nord-est del Giappone. Le onde, alte fino a 15 metri, allagarono la centrale nucleare di Fukushima e spensero i sistemi che raffreddavano i reattori. Senza raffreddamento il combustibile nucleare si surriscaldò e tre reattori ebbero una <strong>fusione</strong> (in inglese "meltdown"). Ci furono delle esplosioni e nell\'aria e nel mare finì del materiale radioattivo. Più di <strong>150.000 persone</strong> dovettero abbandonare le loro case.'
+    },
+    vittime: {
+        title: '🌊 Le vittime dirette',
+        text: 'Attenzione a non confondere le cose: la maggior parte delle vittime di quel giorno (circa <strong>18.000 morti</strong>) fu causata dallo <strong>tsunami</strong>, non dalle radiazioni. Le onde travolsero intere città in pochi minuti. Le radiazioni della centrale, invece, <strong>non causarono morti immediate</strong>: nessuno morì sul momento per le radiazioni. Molte persone anziane, però, morirono per lo stress e i disagi dell\'evacuazione (circa 2.000): vengono chiamate "morti legate al disastro".'
+    },
+    tumori: {
+        title: '🧬 Radiazioni e tumori',
+        text: 'Le radiazioni possono danneggiare le cellule del corpo e, col tempo, far aumentare il rischio di <strong>tumori</strong> (il cancro). A Fukushima, però, le dosi ricevute dalle persone furono basse. Secondo l\'OMS (l\'Organizzazione Mondiale della Sanità) e gli scienziati dell\'ONU, l\'aumento dei tumori sarà così piccolo che probabilmente non si riuscirà nemmeno a misurarlo. Finora è stato riconosciuto ufficialmente <strong>un solo</strong> operaio della centrale morto di tumore a causa delle radiazioni.'
+    },
+    mutazioni: {
+        title: '❓ E le mutazioni?',
+        text: 'Nei film e nei fumetti le radiazioni creano mostri e mutanti… ma nella realtà è diverso! Dopo Fukushima <strong>non è stata trovata nessuna mutazione genetica</strong> negli esseri umani, e nemmeno un aumento di malformazioni nei bambini nati dopo il disastro. Studiando anche piante e animali della zona, gli scienziati hanno visto solo piccoli effetti, niente "mostri". È un esempio di come a volte la paura sia più grande del pericolo reale: le radiazioni sono pericolose e vanno prese sul serio, ma non trasformano le persone.'
+    }
+};
+
+function showFukushima(key, el) {
+    document.querySelectorAll('#natura .martial-art').forEach(a => a.classList.remove('active'));
+    el.classList.add('active');
+    const data = FUKUSHIMA_DATA[key];
+    const panel = document.getElementById('fukushimaInfo');
+    panel.innerHTML = '<strong style="color:#fff">' + data.title + '</strong><br><br>' + data.text;
+    panel.style.animation = 'none';
+    void panel.offsetWidth;
+    panel.style.animation = 'fadeIn 0.3s ease';
+}
+
 
 /* ============================================
    MAPPA GIAPPONE
