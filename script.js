@@ -417,8 +417,8 @@ const FUKUSHIMA_DATA = {
         text: 'Le radiazioni possono rovinare le cellule del corpo e, dopo molti anni, far venire dei <strong>tumori</strong> (il cancro). A Fukushima, però, le persone hanno preso poche radiazioni. I medici dicono che i nuovi tumori saranno pochissimi, forse impossibili da contare. Fino ad oggi c\'è stato <strong>un solo</strong> lavoratore della centrale morto di tumore per le radiazioni.'
     },
     mutazioni: {
-        title: '❓ E le mutazioni?',
-        text: 'Nei film le radiazioni creano mostri e mutanti… ma nella vita vera non è così! Dopo Fukushima <strong>non sono nate mutazioni</strong> nelle persone, e i bambini nati dopo stanno bene. Anche gli animali e le piante della zona non sono diventati "mostri". Insomma: le radiazioni sono pericolose e vanno rispettate, ma non trasformano le persone come nei fumetti.'
+        title: '🧬 Le mutazioni nel DNA',
+        text: 'Dentro ogni nostra cellula c\'è il <strong>DNA</strong>, una specie di "manuale di istruzioni" che dice alla cellula come funzionare. Le radiazioni possono colpire il DNA e cambiare qualche piccola lettera di questo manuale: questi piccoli errori si chiamano <strong>mutazioni</strong>. Di solito il corpo riesce a riparare questi errori da solo. Se però un errore non viene riparato, con gli anni può far nascere un tumore (per questo le mutazioni e i tumori sono collegati). A Fukushima le radiazioni erano poche, quindi i danni al DNA sono stati pochi. La cosa più importante: queste mutazioni <strong>non sono passate ai figli</strong>, e i bambini nati dopo il disastro sono sani.'
     }
 };
 
