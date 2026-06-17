@@ -247,8 +247,9 @@ body {
     font-weight: 800;
     color: #fff;
     letter-spacing: 4px;
-    line-height: 0.98;
-    margin-bottom: 0.5rem;
+    line-height: 1.08;
+    margin-bottom: 1.4rem;
+    padding-bottom: 0.2rem;
     text-shadow: 0 0 70px rgba(255,255,255,0.1), 0 2px 30px rgba(204,34,34,0.25);
 }
 .hero-subtitle {
