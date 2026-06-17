@@ -149,6 +149,29 @@
         <p>La forza della terra giapponese</p>
     </div>
 
+    <div class="card card-map">
+        <h3>🗾 Mappa del Giappone – Clicca per scoprire!</h3>
+        <div class="japan-map-container">
+            <div class="image-container" style="position: relative;">
+                <img id="japan-svg" src="" alt="Mappa del Giappone" style="display:none;width:100%;height:auto;max-width:320px;border-radius:10px">
+                <!-- Marker interattivi per la cartina -->
+                <div class="interactive-overlay" id="japan-overlay" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;border-radius:10px;">
+                    <div id="mjp-hokkaido"  class="map-marker-custom" style="left:74.07%;top:16.32%;" onclick="showMapInfo('hokkaido')"><div class="marker-dot"></div><div class="marker-label">Hokkaido</div></div>
+                    <div id="mjp-honshu"    class="map-marker-custom" style="left:59.79%;top:59.08%;" onclick="showMapInfo('honshu')"><div class="marker-dot"></div><div class="marker-label">Honshu</div></div>
+                    <div id="mjp-shikoku"   class="map-marker-custom" style="left:42%;top:72%;"       onclick="showMapInfo('shikoku')"><div class="marker-dot"></div><div class="marker-label">Shikoku</div></div>
+                    <div id="mjp-kyushu"    class="map-marker-custom" style="left:35%;top:78%;"       onclick="showMapInfo('kyushu')"><div class="marker-dot"></div><div class="marker-label">Kyushu</div></div>
+                    <div id="mjp-tokyo"     class="map-marker-custom" style="left:65%;top:42%;"       onclick="showMapInfo('tokyo')"><div class="marker-dot"></div><div class="marker-label">Tokyo</div></div>
+                    <div id="mjp-fuji"      class="map-marker-custom" style="left:58%;top:52%;"       onclick="showMapInfo('fuji')"><div class="marker-dot"></div><div class="marker-label">Monte Fuji</div></div>
+                    <div id="mjp-hiroshima" class="map-marker-custom" style="left:45%;top:58%;"       onclick="showMapInfo('hiroshima')"><div class="marker-dot"></div><div class="marker-label">Hiroshima</div></div>
+                </div>
+            </div>
+            <div class="map-info-panel" id="mapInfoPanel">
+                👆 Clicca su un'isola o un punto sulla mappa per scoprire informazioni!
+            </div>
+        </div>
+        <button class="btn-calibrate" onclick="startCalibration('japan')">⚙️ Calibra posizione marker</button>
+    </div>
+
     <div class="content-grid">
         <div class="card">
             <h3>📍 Il Giappone nel Mondo</h3>
@@ -237,29 +260,6 @@
             </div>
         </div>
         <div class="info-panel" id="fukushimaInfo">👆 Clicca su un riquadro per scoprire cosa è successo a Fukushima.</div>
-    </div>
-
-    <div class="card card-map">
-        <h3>🗾 Mappa del Giappone – Clicca per scoprire!</h3>
-        <div class="japan-map-container">
-            <div class="image-container" style="position: relative;">
-                <img id="japan-svg" src="" alt="Mappa del Giappone" style="display:none;width:100%;height:auto;max-width:320px;border-radius:10px">
-                <!-- Marker interattivi per la cartina -->
-                <div class="interactive-overlay" id="japan-overlay" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;border-radius:10px;">
-                    <div id="mjp-hokkaido"  class="map-marker-custom" style="left:74.07%;top:16.32%;" onclick="showMapInfo('hokkaido')"><div class="marker-dot"></div><div class="marker-label">Hokkaido</div></div>
-                    <div id="mjp-honshu"    class="map-marker-custom" style="left:59.79%;top:59.08%;" onclick="showMapInfo('honshu')"><div class="marker-dot"></div><div class="marker-label">Honshu</div></div>
-                    <div id="mjp-shikoku"   class="map-marker-custom" style="left:42%;top:72%;"       onclick="showMapInfo('shikoku')"><div class="marker-dot"></div><div class="marker-label">Shikoku</div></div>
-                    <div id="mjp-kyushu"    class="map-marker-custom" style="left:35%;top:78%;"       onclick="showMapInfo('kyushu')"><div class="marker-dot"></div><div class="marker-label">Kyushu</div></div>
-                    <div id="mjp-tokyo"     class="map-marker-custom" style="left:65%;top:42%;"       onclick="showMapInfo('tokyo')"><div class="marker-dot"></div><div class="marker-label">Tokyo</div></div>
-                    <div id="mjp-fuji"      class="map-marker-custom" style="left:58%;top:52%;"       onclick="showMapInfo('fuji')"><div class="marker-dot"></div><div class="marker-label">Monte Fuji</div></div>
-                    <div id="mjp-hiroshima" class="map-marker-custom" style="left:45%;top:58%;"       onclick="showMapInfo('hiroshima')"><div class="marker-dot"></div><div class="marker-label">Hiroshima</div></div>
-                </div>
-            </div>
-            <div class="map-info-panel" id="mapInfoPanel">
-                👆 Clicca su un'isola o un punto sulla mappa per scoprire informazioni!
-            </div>
-        </div>
-        <button class="btn-calibrate" onclick="startCalibration('japan')">⚙️ Calibra posizione marker</button>
     </div>
 
     <div class="nav-buttons">
