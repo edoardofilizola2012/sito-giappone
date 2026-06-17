@@ -25,7 +25,6 @@
         <li><a href="#" class="nav-link" onclick="navigateTo('disciplina');return false;">🥋 Disciplina</a></li>
         <li><a href="#" class="nav-link" onclick="navigateTo('religioni');return false;">⛩️ Religioni</a></li>
         <li><a href="#" class="nav-link" onclick="navigateTo('musica');return false;">🎤 Musica</a></li>
-        <li><a href="#" class="nav-link" onclick="navigateTo('quiz');return false;">📝 Quiz</a></li>
     </ul>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 </nav>
@@ -47,7 +46,6 @@
                 <button class="btn btn-religioni"  onclick="navigateTo('religioni')">⛩️ Esplora le Religioni</button>
                 <button class="btn btn-musica"     onclick="navigateTo('musica')">🎤 Esplora la Musica</button>
             </div>
-            <button class="btn btn-secondary" onclick="navigateTo('quiz')" style="margin-top:1rem;max-width:320px">📝 Vai al Quiz Finale</button>
         </div>
         <div class="hero-visual">
             <svg viewBox="0 0 400 300" class="fuji-svg">
@@ -306,18 +304,6 @@
             </div>
             <button class="btn-calibrate" onclick="startCalibration('wave')">⚙️ Calibra posizione marker</button>
         </div>
-    </div>
-
-    <div class="card" style="margin-bottom:1.5rem">
-        <h3>🎯 Mini Quiz – Arte</h3>
-        <p class="quiz-question">In quale anno fu creata "La Grande Onda di Kanagawa"?</p>
-        <div class="quiz-options">
-            <button class="quiz-btn" onclick="checkArteQuiz(this, false)">1750</button>
-            <button class="quiz-btn" onclick="checkArteQuiz(this, true)">1831</button>
-            <button class="quiz-btn" onclick="checkArteQuiz(this, false)">1900</button>
-            <button class="quiz-btn" onclick="checkArteQuiz(this, false)">1975</button>
-        </div>
-        <div class="info-panel" id="arteQuizFeedback" style="min-height:50px;margin-top:0.8rem"></div>
     </div>
 
     <div class="nav-buttons">
@@ -612,18 +598,6 @@
         <div class="religion-detail" id="religionDetail"></div>
     </div>
 
-    <div class="card" style="margin-bottom:1.5rem">
-        <h3>🎯 Mini Quiz – Religioni</h3>
-        <p class="quiz-question">Come si chiamano gli spiriti della natura nello Scintoismo?</p>
-        <div class="quiz-options">
-            <button class="quiz-btn" onclick="checkReligioniQuiz(this, false)">Buddha</button>
-            <button class="quiz-btn" onclick="checkReligioniQuiz(this, true)">Kami</button>
-            <button class="quiz-btn" onclick="checkReligioniQuiz(this, false)">Nirvana</button>
-            <button class="quiz-btn" onclick="checkReligioniQuiz(this, false)">Matsuri</button>
-        </div>
-        <div class="info-panel" id="religioniQuizFeedback" style="min-height:50px;margin-top:0.8rem"></div>
-    </div>
-
     <div class="nav-buttons">
         <button class="btn btn-prev" onclick="navigateTo('disciplina')">← Disciplina</button>
         <button class="btn btn-next" onclick="navigateTo('musica')">Musica 🎤 →</button>
@@ -722,50 +696,7 @@
 
     <div class="nav-buttons">
         <button class="btn btn-prev" onclick="navigateTo('religioni')">← Religioni</button>
-        <button class="btn btn-next" onclick="navigateTo('quiz')">Quiz Finale 📝 →</button>
-    </div>
-</section>
-
-<!-- ===== QUIZ FINALE ===== -->
-<section id="quiz" class="section">
-    <div class="section-header">
-        <h2>📝 Quiz Finale</h2>
-        <p>Quanto hai imparato sul Giappone?</p>
-    </div>
-
-    <div class="card card-quiz-final">
-        <!-- START SCREEN -->
-        <div id="quizStart">
-            <div style="font-size:4rem;text-align:center;animation:float 3s ease-in-out infinite">🎌</div>
-            <h3 style="text-align:center;font-size:1.6rem;border:none;margin-bottom:0.5rem">Sei pronto per il Quiz?</h3>
-            <p style="text-align:center;color:var(--text-secondary);margin-bottom:1.5rem">6 domande su tutto quello che hai visto. Dimostra quello che sai!</p>
-            <div class="quiz-rules">
-                <div class="rule">✅ 6 domande totali</div>
-                <div class="rule">🎯 Una sola risposta per domanda</div>
-                <div class="rule">⭐ Punteggio finale con valutazione</div>
-            </div>
-            <button class="btn btn-start-quiz" onclick="startQuiz()">🚀 Inizia il Quiz!</button>
-        </div>
-
-        <!-- QUESTIONS -->
-        <div id="quizQuestions" style="display:none">
-            <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
-            <div class="question-counter">Domanda <span id="questionNum">1</span> di 6</div>
-            <div id="questionContainer"></div>
-        </div>
-
-        <!-- RESULTS -->
-        <div id="quizResult" style="display:none">
-            <div class="result-animation" id="resultAnimation">🎌</div>
-            <h3 class="result-title" id="resultTitle"></h3>
-            <div class="score-display"><span id="scoreText"></span> / 6</div>
-            <p class="result-message" id="resultMessage"></p>
-            <div class="result-badges" id="resultBadges"></div>
-            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
-                <button class="btn btn-start-quiz" onclick="restartQuiz()">🔄 Rifai il Quiz</button>
-                <button class="btn btn-secondary" onclick="navigateTo('home')">🏠 Torna alla Home</button>
-            </div>
-        </div>
+        <button class="btn btn-next" onclick="navigateTo('home')">🏠 Torna alla Home</button>
     </div>
 </section>
 

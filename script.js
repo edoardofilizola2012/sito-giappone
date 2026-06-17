@@ -1,7 +1,7 @@
 /* ============================================
    NAVIGAZIONE SPA
    ============================================ */
-const SECTIONS = ['home', 'natura', 'arte', 'guerra', 'disciplina', 'religioni', 'musica', 'quiz'];
+const SECTIONS = ['home', 'natura', 'arte', 'guerra', 'disciplina', 'religioni', 'musica'];
 let current = 'home';
 
 function toggleMenu() {
@@ -33,7 +33,7 @@ function navigateTo(id) {
         setTimeout(() => next.classList.add('visible'), 40);
         current = id;
         updateNav(id);
-        document.querySelector('footer').style.display = id === 'quiz' ? 'block' : 'none';
+        document.querySelector('footer').style.display = id === 'musica' ? 'block' : 'none';
         if (id === 'religioni') { resetReligionStats(); setTimeout(animateReligionStats, 380); }
     }, 300);
 }
