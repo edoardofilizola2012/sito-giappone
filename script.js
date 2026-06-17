@@ -406,19 +406,19 @@ function showTsunamiStep(n) {
 const FUKUSHIMA_DATA = {
     cosa: {
         title: '☢️ Cosa è successo',
-        text: 'L\'11 marzo 2011 un terremoto fortissimo (magnitudo 9.0) scatenò un enorme tsunami sulla costa nord-est del Giappone. Le onde, alte fino a 15 metri, allagarono la centrale nucleare di Fukushima e spensero i sistemi che raffreddavano i reattori. Senza raffreddamento il combustibile nucleare si surriscaldò e tre reattori ebbero una <strong>fusione</strong> (in inglese "meltdown"). Ci furono delle esplosioni e nell\'aria e nel mare finì del materiale radioattivo. Più di <strong>150.000 persone</strong> dovettero abbandonare le loro case.'
+        text: 'L\'11 marzo 2011 un terremoto molto forte creò un grande tsunami. Le onde arrivarono fino alla centrale nucleare di Fukushima e la allagarono. Così si ruppero le macchine che tenevano freddi i reattori. Senza acqua fredda, dentro i reattori si formò troppo calore e ci furono delle esplosioni. Nell\'aria uscì del materiale <strong>radioattivo</strong>, cioè pericoloso. Tantissime persone (più di 150.000) dovettero scappare di casa.'
     },
     vittime: {
-        title: '🌊 Le vittime dirette',
-        text: 'Attenzione a non confondere le cose: la maggior parte delle vittime di quel giorno (circa <strong>18.000 morti</strong>) fu causata dallo <strong>tsunami</strong>, non dalle radiazioni. Le onde travolsero intere città in pochi minuti. Le radiazioni della centrale, invece, <strong>non causarono morti immediate</strong>: nessuno morì sul momento per le radiazioni. Molte persone anziane, però, morirono per lo stress e i disagi dell\'evacuazione (circa 2.000): vengono chiamate "morti legate al disastro".'
+        title: '🌊 Chi è morto davvero',
+        text: 'Una cosa importante: quasi tutte le persone morte quel giorno (circa <strong>18.000</strong>) sono morte per lo <strong>tsunami</strong>, non per le radiazioni. È stata l\'acqua a distruggere le città. Le radiazioni, invece, <strong>non hanno ucciso nessuno sul momento</strong>. Purtroppo molti anziani sono morti dopo, per la paura e la fatica di dover lasciare la loro casa.'
     },
     tumori: {
-        title: '🧬 Radiazioni e tumori',
-        text: 'Le radiazioni possono danneggiare le cellule del corpo e, col tempo, far aumentare il rischio di <strong>tumori</strong> (il cancro). A Fukushima, però, le dosi ricevute dalle persone furono basse. Secondo l\'OMS (l\'Organizzazione Mondiale della Sanità) e gli scienziati dell\'ONU, l\'aumento dei tumori sarà così piccolo che probabilmente non si riuscirà nemmeno a misurarlo. Finora è stato riconosciuto ufficialmente <strong>un solo</strong> operaio della centrale morto di tumore a causa delle radiazioni.'
+        title: '🧬 Le radiazioni e i tumori',
+        text: 'Le radiazioni possono rovinare le cellule del corpo e, dopo molti anni, far venire dei <strong>tumori</strong> (il cancro). A Fukushima, però, le persone hanno preso poche radiazioni. I medici dicono che i nuovi tumori saranno pochissimi, forse impossibili da contare. Fino ad oggi c\'è stato <strong>un solo</strong> lavoratore della centrale morto di tumore per le radiazioni.'
     },
     mutazioni: {
         title: '❓ E le mutazioni?',
-        text: 'Nei film e nei fumetti le radiazioni creano mostri e mutanti… ma nella realtà è diverso! Dopo Fukushima <strong>non è stata trovata nessuna mutazione genetica</strong> negli esseri umani, e nemmeno un aumento di malformazioni nei bambini nati dopo il disastro. Studiando anche piante e animali della zona, gli scienziati hanno visto solo piccoli effetti, niente "mostri". È un esempio di come a volte la paura sia più grande del pericolo reale: le radiazioni sono pericolose e vanno prese sul serio, ma non trasformano le persone.'
+        text: 'Nei film le radiazioni creano mostri e mutanti… ma nella vita vera non è così! Dopo Fukushima <strong>non sono nate mutazioni</strong> nelle persone, e i bambini nati dopo stanno bene. Anche gli animali e le piante della zona non sono diventati "mostri". Insomma: le radiazioni sono pericolose e vanno rispettate, ma non trasformano le persone come nei fumetti.'
     }
 };
 
